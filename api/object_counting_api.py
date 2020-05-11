@@ -146,7 +146,7 @@ def cumulative_object_counting_y_axis(input_video, detection_graph, category_ind
         counting_mode = "..."
         width_heigh_taken = True
         with detection_graph.as_default():
-          with tf.Session(graph=detection_graph) as sess:
+          with tf.compat.v1.Session(graph=detection_graph) as sess:
             # Definite input and output Tensors for detection_graph
             image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
 
